@@ -26,7 +26,7 @@ class OnClickMethodVisitor extends MethodVisitor {
         if (extension.checkClass != null && !extension.checkClass.equals("")) {
             mv.visitVarInsn(ALOAD, 1);
             mv.visitMethodInsn(INVOKEVIRTUAL, "android/view/View", "getId", "()I", false);
-            mv.visitMethodInsn(INVOKESTATIC, extension.checkClass, "isFastClick", "(I)Z", false);
+            mv.visitMethodInsn(INVOKESTATIC, extension.checkClass, "isFastClick", "()Z", false);
             Label l1 = new Label();
             mv.visitJumpInsn(IFEQ, l1);
             Label l2 = new Label();
